@@ -33,7 +33,29 @@ Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = A
 ## Figure -02 FULL ADDER
 
 ## Procedure
-Connect the supply (+5V) to the circuit Switch ON the main switch If the output is 1, then the led glows.
+1.Create a New Project:
+
+Open Quartus and create a new project by selecting "File" > "New Project Wizard." Follow the wizard's instructions to set up your project, including specifying the project name, location, and target device (FPGA).
+
+2.Create a New Design File:
+
+Once the project is created, right-click on the project name in the Project Navigator and select "Add New File." Choose "Verilog HDL File" or "VHDL File," depending on your chosen hardware description language.
+
+3.Write the Combinational Logic Code:
+
+Open the newly created Verilog or VHDL file and write the code for your combinational logic.
+
+4.Compile the Project:
+
+To compile the project, click on "Processing" > "Start Compilation" in the menu. Quartus will analyze your code, synthesize it into a netlist, and perform optimizations based on your target FPGA device.
+
+5.Analyze and Fix Errors:
+
+If there are any errors or warnings during the compilation process, Quartus will display them in the Messages window. Review and fix any issues in your code if necessary. View the RTL diagram.
+
+6.Verification:
+
+Click on "File" > "New" > "Verification/Debugging Files" > "University Program VWF". Once Waveform is created Right Click on the Input/Output Panel > " Insert Node or Bus" > Click on Node Finder > Click On "List" > Select All. Give the Input Combinations according to the Truth Table and then simulate the Output Waveform.
 
 ## Program:
 
@@ -42,57 +64,64 @@ Program to design a half adder and full adder circuit and verify its truth table
 Developed by: Abdul hameed.H
 
 RegisterNumber: 212222050001
-HALFADDER:
+
+# HALFADDER:
 ```
-module HalfAdder(A,B,sum,carry);
-input A,B;
+module exppp(a,b,sum,carry);
+input a,b;
 output sum,carry;
-assign sum= A^B;
-assign carry = A&B;
+assign sum= a^b;
+assign carry = a&b;
 endmodule
 ```
 ## FULLADDER:
 ```
-module FullAdder(A,B,Cin,sum,carry);
-input A,B,Cin;
+module full(a,b,cin,sum,carry);
+input a,b,cin;
 output sum,carry;
-assign sum= A^B^Cin;
-assign carry = (A&B)|((A^B)&Cin);
+assign sum= a^b^cin;
+assign carry = (a&b)|((a^b)&cin);
 endmodule
 ```
-## RTL diagram:
 
-## HALFADDER
-
-![image](https://github.com/lovelydevil36/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/123564624/9fb1bea1-66f4-486f-9ade-9b36888a0725)
+# OUTPUT:
 
 
-## FULLADDER
-
-![image](https://github.com/lovelydevil36/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/123564624/c98f6daf-d3aa-43cb-87e6-7d8549319e2d)
-
-
-## Truth table:
-
-## HALFADDER
-
-![image](https://github.com/lovelydevil36/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/123564624/23f416cb-4142-4125-ae74-2d5d899e2fe7)
+# Half adder Truthtable:
+![image](https://github.com/lovelydevil36/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/123564624/4fd32e44-d9cb-4277-9402-0593bcda9ffa)
 
 
-## FULLADDER
 
-![image](https://github.com/lovelydevil36/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/123564624/a50ccde2-9e86-41d1-ab76-7fdaf67243f6)
+# Half Adder RTL realization:
+
+![image](https://github.com/lovelydevil36/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/123564624/65040246-06f9-4efe-af82-15dd0271a415)
 
 
-## Output waveform:
+# Timing Diagram Half Adder:
 
-## HALFADDER
+![image](https://github.com/lovelydevil36/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/123564624/0f9465e5-e021-47b1-91c2-f6ccd481cfc8)
 
-![image](https://github.com/lovelydevil36/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/123564624/6c51f6e8-1484-4b76-bb0a-f759489d7679)
 
-## FULLADDER
 
-![image](https://github.com/lovelydevil36/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/123564624/3edb8922-8f41-4e22-8dd3-ae22987524bd)
+
+# Full adder Truthtable:
+
+![image](https://github.com/lovelydevil36/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/123564624/3f998759-5a89-4fee-b500-27c818e7621d)
+
+# Full Adder RTL realization:
+
+![image](https://github.com/lovelydevil36/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/123564624/b5398a74-e168-462e-8417-ec6b01816d6f)
+
+
+# Timing Diagram Full Adder:
+
+![image](https://github.com/lovelydevil36/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/123564624/6dec24c9-278e-474f-bf20-a36afd70d837)
+
+
+
+
+
+
 
 
 ## Result:
